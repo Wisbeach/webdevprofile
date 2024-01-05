@@ -1,0 +1,427 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  color: rgb(249, 57, 185);
+  background-color: rgb(8, 3, 9);
+  background-image: url("images/flatland.jpg"); /* Ensure the path is correct */
+  background-size: cover; /* Ensure the entire image fits */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: Fix the background */
+  padding: 20px;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.content {
+  flex: 1;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 5vw; /* Adjusted for responsiveness */
+}
+
+h2 {
+  font-size: 4vw;
+}
+
+h3 {
+  font-size: 3vw; /* Adjusted for responsiveness */
+  color: white;
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.5vw; /* Adjusted for responsiveness */
+}
+
+.profilepic-container {
+  margin: 0 auto;
+  width: 40vw;
+  height: 40vw;
+  max-width: 200px;
+  max-height: 200px;
+  border: 10px solid #FF69B4;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.profilepic, .profilepic-hover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+.profilepic {
+  z-index: 2;
+  transition: z-index 0s 0.6s; /* Delay the z-index change until the flip is complete */
+}
+
+.profilepic-hover {
+  transform: rotateY(180deg);
+  z-index: 1; /* Ensure this is below .profilepic initially */
+}
+
+.profilepic-container:hover {
+  transform: rotateY(180deg);
+}
+
+.profilepic-hover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 1s;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilepic-container:hover .profilepic-hover  {
+  opacity: 1;
+}
+
+.container {
+  background: transparent;
+  object-fit: cover;
+}
+
+.intro_card, .middle_card {
+  background: transparent;
+  color: white;
+  padding: 20px;
+  border: 10px solid #FF69B4;
+  box-shadow: 0 0 50px 15px #5d0330;
+  margin: 10px auto;
+  border-radius: 50px;
+  text-align: center;
+  width: 40%;
+  height: 60%;
+  font-family: caveat;
+}
+
+.fingerprint-button {
+  width: 90px;
+  height: 90px;
+  opacity: 0.7;
+  background-color: aqua;
+  border: 5px solid aqua;
+  box-shadow: 0 0 50px 15px #5d0330, 0 8px 15px 2px rgba(255, 105, 180, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.fingerprint-button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.fingerprint-button:hover img {
+  filter: brightness(200%);
+  background-color: blue;
+}
+
+.fingerprint-button:active img {
+  filter: brightness(300%);
+}
+
+.middle_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  width: 80%; /* Responsive width */
+}
+
+.middle_card .item {
+  flex-grow: 1;
+  text-align: center;
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.item-1, .item-2, .item-3 {
+  background-color: transparent;
+}
+
+.item a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 10px;
+}
+
+.bottom_card {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  text-align: center;
+  width: 80%;
+  height: 100px;
+  font-family: caveat;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+li i {
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.glow {
+  color: white;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+.fa-brands {
+  color: #5DEDE4;
+  font-size: 40px;
+  transition: color 0.3s;
+}
+
+.fa-brands:hover {
+  color: #fff;
+}
+
+.glow li a {
+  font-family: caveat;
+  color: aliceblue;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  h1, h2 {
+    font-size: 8vw;
+  }
+
+  .profilepic-container {
+    width: 75vw;
+    height: 75vw;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .intro_card, .middle_card, .bottom_card {
+    width: 95%;
+  }
+
+  .about-page, .project-page {
+    width: 100%;
+  }
+
+  .fingerprint-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+  /* Add the styles for the about page */
+/* Add the styles for the about page */
+.about-page {
+  background: rgba(31, 2, 84, 0.7);
+  /* background-image: url("images/pawel-czerwinski-fPN1w7bIuNU-unsplash.jpg"); */
+  color: #fff;
+  padding: 20px;
+  border: 10px solid #FF69B4;
+  box-shadow: 0 0 50px 15px #5d0330;
+  margin: 20px auto;
+  border-radius: 30px;
+  text-align: center;
+  width: 70%;
+  font-family: rubik;
+}
+
+.about-background {
+  background-image: url("images/jr-korpa-7NoLliK6ntc-unsplash.jpg"); /* Replace with the path to your "About" page background image */
+  /* Keep or modify other background properties as needed */
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Adjust the font size for the heading */
+.about-page h1 {
+  font-size: 2em; /* Increase the font size for the heading */
+  margin-top: 10px;
+}
+
+/* Adjust the font size for the content */
+.about-page p {
+  font-size: 24px; /* Increase the font size for the content */
+  line-height: 1.6;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
+  .about-page {
+    width: 100%;
+  }
+}
+
+/* For tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-page {
+    width: 50%;
+  }
+}
+.project-page {
+  background: rgba(31, 2, 84, 0.7);
+  /* background-image: url("images/pawel-czerwinski-fPN1w7bIuNU-unsplash.jpg"); */
+  color: #fff;
+  padding: 20px;
+  border: 10px solid #FF69B4;
+  box-shadow: 0 0 50px 15px #5d0330;
+  margin: 20px auto;
+  border-radius: 30px;
+  text-align: center;
+  width: 70%;
+  font-family: rubik;
+}
+
+.project-page a {
+  color: #FF69B4;
+  font-size: 25px;
+  text-decoration: underline; /* Add underline for better visibility */
+}
+
+.project-background {
+  /* background-image: url("images/jr-korpa-7NoLliK6ntc-unsplash.jpg"); Replace with the path to your "About" page background image */
+  /* Keep or modify other background properties as needed */
+
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Adjust the font size for the heading */
+.project-page h1 {
+  font-size: 2em; /* Increase the font size for the heading */
+  margin-top: 10px;
+}
+
+/* Adjust the font size for the content */
+.project-page p {
+  font-size: 24px; /* Increase the font size for the content */
+  line-height: 1.6;
+}
+
+/* Add this to your existing CSS */
+/* Add this to your existing CSS */
+/* Add this to your existing CSS */
+.modal {
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Set a fixed height for the modal */
+  height: 100%;
+  /* Enable vertical scrolling */
+  overflow-y: auto;
+}
+
+.modal-content {
+  position: absolute;
+  /* Center the content horizontally */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Adjust the top position based on content height */
+@media screen and (max-height: 768px) {
+  .modal-content {
+    /* Center the content at 30% from the top when the content height is greater than the viewport height */
+    top: 30%;
+    /* Set a maximum height for the modal content */
+    max-height: 70%;
+    /* Enable vertical scrolling within the modal content */
+    overflow-y: auto;
+  }
+}
+
+
+/* Add styles for the close button */
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #FF69B4;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add hover effect */
+.modal-close-button:hover {
+  background-color: #FF0080;
+}
+
+.button-link {
+  text-decoration: none;
+  color:#5DEDE4;
+}
+
+/*navbar */
+.navbar-brand img {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
