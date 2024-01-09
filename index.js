@@ -1,31 +1,64 @@
-function loadContent(url) {
+
+function loadContent(url, modalId) {
   fetch(url)
-    .then(response => response.text())
-    .then(data => {
-      const modalContent = document.querySelector('.modal-content');
-      modalContent.innerHTML = data;
+      .then(response => response.text())
+      .then(data => {
+          const modal = document.getElementById(modalId);
+          if (modal) {
+              const modalContent = modal.querySelector('.modal-content');
+              modalContent.innerHTML = data;
 
-      // Create the close button element
-      const closeButton = document.createElement('button');
-      closeButton.textContent = 'Close';
-      closeButton.classList.add('modal-close-button');
-      closeButton.addEventListener('click', () => closeModal());
+              // Create and add the close button
+              const closeButton = document.createElement('button');
+              closeButton.textContent = 'Close';
+              closeButton.classList.add('modal-close-button');
+              closeButton.onclick = () => closeModal(modalId); // Updated to use closeModal
+              modalContent.appendChild(closeButton);
+          }
+      })
+      .catch(error => console.error('Error:', error));
+}
 
-      // Add the close button to the modal content
-      modalContent.appendChild(closeButton);
 
-      // Show the modal
-      const modal = document.querySelector('.modal');
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+function openPopup(modalId, url) {
+  loadContent(url, modalId); // Pass the URL and modal ID
+  const modal = document.getElementById(modalId);
+  if (modal) {
       modal.style.display = 'block';
-    })
-    .catch(error => console.error('Error:', error));
+  }
+}
+function openContactForm() {
+  document.getElementById("contactFormModal").style.display = "block";
+
 }
 
-function closeModal() {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'none';
+function closeContactForm() {
+  document.getElementById("contactFormModal").style.display = "none";
 }
 
-function openPopup(url) {
-  loadContent(url);
+
+function triggerHingeEffect() {
+  var elem = document.querySelector('.about-button');
+  elem.classList.add('hinge-effect');
+}
+
+// Attach the event listener outside the trigger function
+var elem = document.querySelector('.about-button');
+if (elem) {
+  elem.addEventListener('animationend', function() {
+    elem.classList.remove('hinge-effect');
+  });
+}
+
+function openModalWithDelay(modalId, url, delay) {
+  setTimeout(function() {
+    openPopup(modalId, url);
+  }, delay);
 }

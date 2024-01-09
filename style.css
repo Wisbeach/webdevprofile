@@ -119,20 +119,20 @@ p {
   border: 10px solid #FF69B4;
   box-shadow: 0 0 50px 15px #5d0330;
   margin: 10px auto;
-  border-radius: 50px;
+  border-radius: 20%;
   text-align: center;
-  width: 40%;
+  width: 70%;
   height: 60%;
   font-family: caveat;
 }
 
 .fingerprint-button {
-  width: 90px;
-  height: 90px;
-  opacity: 0.7;
+  width: 120px;
+  height: 120px;
+  opacity: 0.9;
   background-color: aqua;
   border: 5px solid aqua;
-  box-shadow: 0 0 50px 15px #5d0330, 0 8px 15px 2px rgba(255, 105, 180, 0.5);
+  box-shadow: 0 0 90px 15px #5d0330, 0 8px 15px 2px rgba(255, 105, 180, 0.5);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -288,15 +288,48 @@ li i {
 
 /* Adjust the font size for the heading */
 .about-page h1 {
-  font-size: 2em; /* Increase the font size for the heading */
+  font-size: 1.5em; /* Increase the font size for the heading */
   margin-top: 10px;
 }
 
 /* Adjust the font size for the content */
 .about-page p {
-  font-size: 24px; /* Increase the font size for the content */
+  font-size: 18px; /* Increase the font size for the content */
   line-height: 1.6;
 }
+
+.about-button {
+  border: 3px solid white; /* Orange border */
+  background-color: transparent; /* Transparent background */
+  padding: 5px 60px; /* Top and bottom, Left and right padding */
+  border-radius: 20px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  display: inline-block; /* Allows setting padding and width */
+  margin: 20px; /* Some space around the button */
+  font-size: 1em; /* Font size - can be adjusted */
+}
+
+.about-button h3 {
+  margin: 0; /* Remove default margin from h3 */
+  color: white; /* Text color - orange to match the border */
+}
+.about-button:hover {
+  background-color: rgba(255, 105, 180, 0.5); /* Orange background on hover */
+  color: white; /* Text color changes to white on hover */
+}
+@keyframes hinge {
+  0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+  20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+  40%, 80% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; opacity: 1; }
+  100% { transform: translate3d(0, 700px, 0); opacity: 0; }
+}
+
+.hinge-effect {
+  animation: hinge 2s ease-in-out;
+}
+
 
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
@@ -341,13 +374,17 @@ li i {
 
 /* Adjust the font size for the heading */
 .project-page h1 {
-  font-size: 2em; /* Increase the font size for the heading */
+  font-size: 1.5em; /* Increase the font size for the heading */
   margin-top: 10px;
+}
+
+.project-page h3 {
+  font-size: 1.3em;
 }
 
 /* Adjust the font size for the content */
 .project-page p {
-  font-size: 24px; /* Increase the font size for the content */
+  font-size: 18px; /* Increase the font size for the content */
   line-height: 1.6;
 }
 
@@ -355,28 +392,32 @@ li i {
 /* Add this to your existing CSS */
 /* Add this to your existing CSS */
 .modal {
-  z-index: 1000;
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  z-index: 1000;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Set a fixed height for the modal */
-  height: 100%;
-  /* Enable vertical scrolling */
-  overflow-y: auto;
+  overflow: hidden; /* Hide overflow */
+}
+.modal-content {
+  position: fixed; /* Fixed position */
+  top: 20px; /* Start 20 pixels from the top */
+  left: 20px; /* 20 pixels from the left */
+  right: 20px; /* 20 pixels from the right */
+  bottom: 20px; /* 20 pixels from the bottom */
+  background-color: rgba(0,0,0,0.8); /* Or any color you prefer */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+  border-radius: 10px; /* Optional, for rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Optional, for a drop shadow effect */
 }
 
-.modal-content {
-  position: absolute;
-  /* Center the content horizontally */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: transparent;
+.contact-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border-radius: 5px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* Adjust the top position based on content height */
@@ -394,7 +435,7 @@ li i {
 
 /* Add styles for the close button */
 .modal-close-button {
-  position: absolute;
+  position: fixed; /* Fixed to the viewport */
   top: 10px;
   right: 10px;
   font-size: 20px;
@@ -424,4 +465,11 @@ li i {
 .navbar-brand img {
   height: 60px; /* Adjust the height as needed */
   width: auto; /* Maintain aspect ratio */
+}
+.navbar-nav .nav-item {
+  margin-right: 10px; /* Adds some space between the buttons */
+}
+
+.navbar-nav .nav-link {
+  color: white; /* Adjust the text color if needed */
 }
