@@ -420,6 +420,50 @@ li i {
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
+#contactFormModal input[type="text"],
+#contactFormModal input[type="email"],
+#contactFormModal textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Comfortable padding */
+    margin-bottom: 15px; /* Space between fields */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Subtle border */
+}
+
+#contactFormModal label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space above the input field */
+    font-weight: bold; /* Make labels bold */
+}
+
+#contactFormModal textarea {
+    height: 150px; /* Larger textarea for message */
+}
+#contactFormModal .btn {
+  padding: 10px 20px; /* Larger buttons */
+  font-size: 1rem; /* Larger font size */
+}
+
+#contactFormModal .btn-primary {
+  background-color: #007bff; /* Primary color */
+  border-color: #007bff;
+}
+
+#contactFormModal .btn-secondary {
+  background-color: #6c757d; /* Secondary color */
+  border-color: #6c757d;
+}
+#contactFormModal .modal-content {
+  padding: 20px; /* Padding inside the modal content */
+  background-color: #fff; /* White background for the form */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.modal-header, .modal-footer {
+    padding: 20px; /* More padding for header and footer */
+}
+
+
 /* Adjust the top position based on content height */
 @media screen and (max-height: 768px) {
   .modal-content {
