@@ -1,4 +1,28 @@
 
+
+// Add this code at the top of your index.js file
+const userPart = "warren.wisbeach";
+const domainPart = "gmail.com";
+
+// Function to set mailto link for the email icon
+function setEmailLink() {
+  const emailLink = document.getElementById('emailIcon');
+  if (emailLink) {
+    emailLink.href = `mailto:${userPart}@${domainPart}`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Your code here
+  setEmailLink();
+  const emailIcon = document.getElementById('emailIcon');
+  if (emailIcon) {
+      emailIcon.addEventListener('click', (event) => {
+          // Additional functionality
+      });
+  }
+});
+
 function loadContent(url, modalId) {
   fetch(url)
       .then(response => response.text())
@@ -34,14 +58,7 @@ function openPopup(modalId, url) {
       modal.style.display = 'block';
   }
 }
-function openContactForm() {
-  document.getElementById("contactFormModal").style.display = "block";
 
-}
-
-function closeContactForm() {
-  document.getElementById("contactFormModal").style.display = "none";
-}
 
 
 function triggerHingeEffect() {

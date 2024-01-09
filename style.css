@@ -412,13 +412,13 @@ li i {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Optional, for a drop shadow effect */
 }
 
-.contact-modal-content {
+/* .contact-modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  /* padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-}
+} */ */
 
 #contactFormModal input[type="text"],
 #contactFormModal input[type="email"],
@@ -437,28 +437,11 @@ li i {
 }
 
 #contactFormModal textarea {
-    height: 150px; /* Larger textarea for message */
-}
-#contactFormModal .btn {
-  padding: 10px 20px; /* Larger buttons */
-  font-size: 1rem; /* Larger font size */
-}
+    height: 150px;
+    width:300px; /* Larger textarea for message */
 
-#contactFormModal .btn-primary {
-  background-color: #007bff; /* Primary color */
-  border-color: #007bff;
 }
-
-#contactFormModal .btn-secondary {
-  background-color: #6c757d; /* Secondary color */
-  border-color: #6c757d;
-}
-#contactFormModal .modal-content {
-  padding: 20px; /* Padding inside the modal content */
-  background-color: #fff; /* White background for the form */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
+#
 .modal-header, .modal-footer {
     padding: 20px; /* More padding for header and footer */
 }
